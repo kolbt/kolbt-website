@@ -1,0 +1,493 @@
+body {
+	margin: 0;
+	font-family: 'Quicksand', sans-serif;
+	color: #7D98A1;
+	background-color: #EEF1EF;
+}
+
+/* Colors
+	Dark blue: 			#1E243B
+	Light (greenish): 	#7D98A1
+	Dark grey: 			#5E6572
+	Light grey: 		#A9B4C2
+	White: 				#EEF1EF
+*/
+
+/* Container, text, and animations for top box */
+.hello {
+	background-color: #1E243B;
+	padding: 40vh;
+	text-align: center;
+	height: 30vh;
+	animation-name: bkgrnd;
+	animation-duration: 1.5s;
+	animation-delay: 1s;
+	animation-fill-mode: both;
+}
+
+h1 {
+	font-size: 40px;
+}
+
+h2 {
+	color: #EEF1EF;
+	animation-name: subheading;
+	animation-duration: 3s;
+	animation-delay: 1s;
+	animation-fill-mode: both;
+}
+
+/* Make a navigation bar */
+#navbar {
+	overflow: hidden;
+	background-color: #7D98A1;
+	z-index: 500;
+}
+
+#navbar a {
+	float: left;
+	display: block;
+	color: #1E243B;
+	text-align: center;
+	padding: 5px 5px;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+#navbar a:hover {
+	background-color: #A9B4C2;
+	color: #1E243B;
+}
+
+#navbar a.active {
+	background-color: #5E6572;
+	color: #A9B4C2;
+}
+
+/* First brief bio text */ 
+.sOne {
+	display: flex;
+	align-items: center;
+  	position: relative;
+  	top: 150px;
+  	left: 10vw;
+  	width: 80vw;
+  	font-size: 3vw;
+  	padding-top: 5vw;
+  	opacity: 0;
+  	-webkit-transition: opacity 1.0s linear,
+  						-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+
+  	will-change: transform, opacity;
+}
+.sOne.is-visible {
+	opacity: 1;
+	-webkit-transform: translate(0, -150px);
+}
+@media screen and (min-width: 800px) {
+  .sOne {
+     font-size: 24px;
+  }
+}
+
+.left {
+	padding-right: 50px;
+}
+.right {
+	color: #1E243B;
+}
+
+/* Formatting, animation for my headshot */
+.headshot {
+	opacity: 0;
+	width: 20vw;
+	border-radius: 50%;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5)); 
+    -webkit-transition: opacity 0s linear;
+  	transition: opacity 0s linear;
+
+  	will-change: opacity;
+}
+.headshot.is-visible {
+	opacity: 1;
+}
+
+/* Make the navigation bar stick when scrolled past */
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+.sticky + .sOne {
+  	padding-top: 60px;
+}
+
+/* Graduate work */
+.sTwo {
+	position: relative;
+	opacity: 0;
+	margin-top: 5vw;
+	background-color: #A9B4C2;
+	color: #1E243B;
+	left: 100vw;
+	-webkit-transition: opacity 1.0s linear,
+  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+
+  	will-change: transform, opacity;
+}
+.sTwo.is-visible {
+	opacity: 1;
+	-webkit-transform: translate(-100vw, 0);
+}
+
+.shift {
+	padding-left: 15vw;
+}
+
+h4 {
+    width: 80%; 
+    border: 4px solid #1E243B; 
+    text-align: center;
+    line-height: 0px;
+    font-size: 40px;
+    color: #1E243B;
+} 
+
+h4 span { 
+    background: #A9B4C2; 
+    padding: 20px;
+}
+
+.grad-text {
+	opacity: 0;
+	width: 90vw;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+	font-size: 3vw;
+	text-align: center;
+	-webkit-transition: opacity 1.0s linear;
+  	transition: opacity 1.0s linear;
+  	transition-delay: 1s;
+
+	will-change: opacity;
+}
+@media screen and (min-width: 800px) {
+  .grad-text {
+     font-size: 24px;
+  }
+}
+.grad-text.is-visible {
+	opacity: 1;
+}
+
+/* Whingdingdilly */
+.sThree {
+	opacity: 0;
+	margin-top: 0vw;
+	background-color: #EEF1EF;
+	color: #5E6572;
+	position: relative;
+	left: -100vw;
+	-webkit-transition: opacity 1.0s linear,
+  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+
+  	will-change: transform, opacity;
+}
+.sThree.is-visible {
+	opacity: 1;
+	-webkit-transform: translate(100vw, 0);
+}
+
+h5 {
+    width: 80%; 
+    border: 4px solid #5E6572; 
+    text-align: center;
+    line-height: 0px;
+    font-size: 40px;
+    color: #5E6572;
+} 
+
+h5 span { 
+    background: #EEF1EF; 
+    padding: 20px;
+}
+
+.whing-text {
+	opacity: 0;
+	width: 90vw;
+	display: block;
+  	margin-left: auto;
+  	margin-right: auto;
+	font-size: 3vw;
+	text-align: center;
+	-webkit-transition: opacity 1.0s linear;
+  	transition: opacity 1.0s linear;
+  	transition-delay: 1s;
+
+	will-change: opacity;
+}
+@media screen and (min-width: 800px) {
+  .whing-text {
+     font-size: 24px;
+  }
+}
+.whing-text.is-visible {
+	opacity: 1;
+}
+
+.animals {
+	margin-top: 3vw;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: auto auto;
+	grid-column-gap: 10px;
+	align-items: baseline;
+	justify-items: center;
+}
+
+.animal-caption {
+	font-size: 3vw;
+	font-weight: bolder;
+	opacity: 0;
+	height: 100px;
+	position: relative;
+	top: 100px;
+	-webkit-transition: opacity 0.5s linear,
+  						-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 0.5s linear,
+  				-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 0.5s linear,
+  				transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition-delay: 3s;
+
+  	will-change: transform, opacity;
+}
+
+.animal-caption.is-visible {
+	opacity: 1;
+	-webkit-transform: translate(0, -100px);
+	transform: translate(0, -100px);
+}
+
+.camel {
+	opacity: 0;
+	height: 100px;
+	position: relative;
+	top: 100px;
+	-webkit-transition: opacity 1.0s linear,
+  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+
+  	will-change: transform, opacity;
+}
+.camel.is-visible {
+	opacity: 1;
+	-webkit-transform: translate(0, -100px);
+	transform: translate(0, -100px);
+}
+.rhino {
+	opacity: 0;
+	height: 8vw;
+	position: relative;
+	top: 100px;
+	-webkit-transition: opacity 1.0s linear,
+  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition-delay: 0.5s;
+
+  	will-change: transform, opacity;
+}
+.rhino.is-visible{
+	opacity: 1;
+	-webkit-transform: translate(0, -100px);
+	transform: translate(0, -100px);
+}
+.giraffe {
+	opacity: 0;
+	height: 16vw;
+	position: relative;
+	top: 100px;
+	-webkit-transition: opacity 1.0s linear,
+  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition-delay: 1s;
+
+  	will-change: transform, opacity;
+}
+.giraffe.is-visible{
+	opacity: 1;
+	-webkit-transform: translate(0, -100px);
+	transform: translate(0, -100px);
+}
+.elephant {
+	opacity: 0;
+	height: 10vw;
+	position: relative;
+	top: 100px;
+	-webkit-transition: opacity 1.0s linear,
+  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition-delay: 1.5s;
+
+  	will-change: transform, opacity;
+}
+.elephant.is-visible{
+	opacity: 1;
+	-webkit-transform: translate(0, -100px);
+	transform: translate(0, -100px);
+}
+.deer {
+	opacity: 0;
+	height: 10vw;
+	position: relative;
+	top: 100px;
+	-webkit-transition: opacity 1.0s linear,
+  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition-delay: 2s;
+
+  	will-change: transform, opacity;
+}
+.deer.is-visible{
+	opacity: 1;
+	-webkit-transform: translate(0, -100px);
+	transform: translate(0, -100px);
+}
+
+/* Outside of work */
+.sFour {
+	opacity: 0;
+	margin-top: 0vw;
+	position: relative;
+	top: 150px;
+	background-color: #7D98A1;
+	color: #1E243B;
+	-webkit-transition: opacity 1.0s linear,
+  						-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+  	transition: opacity 1.0s linear,
+  				transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
+
+  	will-change: transform, opacity;
+}
+
+.sFour.is-visible {
+	opacity: 1;
+	-webkit-transform: translate(0, -150px);
+	transform: translate(0, -150px);
+}
+
+.colorFour {
+	background: #7D98A1; 
+	padding-top: 0.1px;
+}
+
+h6 {
+    width: 80%; 
+    border: 4px solid #1E243B; 
+    text-align: center;
+    line-height: 0px;
+    font-size: 40px;
+    background: #7D98A1; 
+    color: #1E243B;
+} 
+
+h6 span { 
+    background: #7D98A1; 
+    padding: 20px;
+}
+
+/* Bruce image overlay section */
+.bruce {
+	position: relative;
+}
+.brucePic {
+	opacity: 0;
+	width: 100vw;
+	-webkit-transition: opacity 4s;
+  	transition: opacity 4s;
+
+  	will-change: opacity;
+}
+.brucePic.is-visible {
+	opacity: 1;
+}
+.bruceTxt {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+	background-color: #1E243B;
+	color: #EEF1EF;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/* Social contact icons and links */
+.icons {
+	overflow: hidden;
+	background-color: #7D98A1;
+}
+.icons a {
+	float: right;
+	display: block;
+	padding: 5px 3px;
+}
+.icons a:hover {
+	background-color: #A9B4C2;
+	color: #1E243B;
+}
+/* Formatting contact bar */
+.github {
+	vertical-align: middle;
+	width: 28px;
+}
+.linkedin {
+	vertical-align: middle;
+	width: 28px;
+}
+.email {
+	vertical-align: middle;
+	width: 28px;
+}
+
+/* Animation for background color change */
+@keyframes bkgrnd {
+	0%   {background-color: #7D98A1;}
+	100% {background-color: #1E243B;}
+}
+/* Animation for text color change */
+@keyframes subheading {
+	0%	 {color: #7D98A1;}
+	50%	 {color: #1E243B;}
+	100% {color: #EEF1EF;}
+}

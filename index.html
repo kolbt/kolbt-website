@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Thomas Kolb</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
+		<script type="text/javascript" src="js/jQuery-3.4.1.js"></script>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	</head>
+
+	<body>
+
+		<div class="hello">
+			<h1>Hi, I'm Tom.</h1>
+			<h2>How can we work together?</h2>
+		</div>
+
+		<div id="navbar">
+	  		<a class="active" href="index.html">ABOUT<a/>
+			<a href="pages/contact.html">CONTACT<a/>
+			<a href="pages/resume.html">RESUME</a>
+		</div>
+
+		<div class="sOne show-on-scroll", id="sOne">
+			<div class="left">
+				<img class="headshot show-on-scroll" align="left" src="img/kolb_thomas.jpg">
+			</div>
+
+			<div class="right">
+				<h3>This is me!</h3>
+  				<p>
+  					I'm a fifth year physical chemistry PhD student in the Klotsa Group at UNC Chapel Hill. I've used my time as a graduate student to determine and pursue what I'm passionate about — <strong>data science</strong>.
+  				</p>
+			</div>
+		</div>
+
+
+		<div class="sTwo show-on-scroll", id="sTwo">
+			<br>
+			<div class="shift">
+				<h4>
+					<span>Graduate Work</span>
+				</h4>
+			</div>
+
+			<div class="grad-text show-on-scroll">
+				I need to write things about graduate schoooool what do I write who knows?
+			</div>
+
+			<br>
+
+		</div>
+
+		<div class="sThree show-on-scroll", id="sThree">
+			<br>
+			<div class="shift">
+				<h5 class="whing" id="whing">
+					<span> Whingdingdilly </span>
+				</h5>
+			</div>
+
+			<div class="whing-text show-on-scroll">
+				During grad school, I've had to write a lot of code to solve a variety of issues. To keep things copasetic between my laptop, workstation  and the computing clusters, I made a github repository. But what to call it? The diversity of languages, and functions reminded me of Bill Peet's "The Whingdingdilly" (a personal childhood favorite).
+			</div>
+
+			<br>
+
+			<div class="animals">
+
+				<div>
+					<img class="camel show-on-scroll" src="img/camel.svg">
+				</div>
+				<div>
+					<img class="rhino show-on-scroll" src="img/rhino.svg">
+				</div>
+				<div>
+					<img class="giraffe show-on-scroll" src="img/giraffe.svg">
+				</div>
+				<div>
+					<img class="elephant show-on-scroll" src="img/elephant.svg">
+				</div>
+				<div>
+					<img class="deer show-on-scroll" src="img/deer.svg">
+				</div>
+
+				<div class="animal-caption show-on-scroll"> &nbsp; bash </div>
+				<div class="animal-caption show-on-scroll"> jupyter </div>
+				<div class="animal-caption show-on-scroll"> python </div>
+				<div class="animal-caption show-on-scroll"> &nbsp; git </div>
+				<div class="animal-caption show-on-scroll"> &nbsp; C++ </div>
+	
+			</div>
+
+			<br>
+
+		</div>
+
+		<div class="sFour show-on-scroll", id="sFour">
+			<div class="shift colorFour">
+				<h6>
+					<span>Outside of Work</span>
+				</h6>
+			</div>
+
+			<div class="bruce">
+				<img class="brucePic show-on-scroll" src="img/bruce_jumping.jpg">
+				<div class="bruceTxt">
+					<p> Bruce. Loves. Diving. </p>
+				</div>
+			</div>
+		</div>
+
+		<div class="icons">
+			<a href="https://github.com/kolbt">
+				<img class="github" src="img/github.svg">
+			</a>
+			<a href="https://www.linkedin.com/in/thomas-kolb-5174b2128/">
+				<img class="linkedin" src="img/linkedin.svg">
+			</a>
+			<a href="mailto:kolbyt93@gmail.com">
+				<img class="email" src="img/email.svg">
+			</a>
+		</div>
+
+
+		<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+
+			function myFunction() {
+	  			if (window.pageYOffset >= sticky) {
+	    			navbar.classList.add("sticky")
+	  			} else {
+	    			navbar.classList.remove("sticky");
+	  			}
+			}
+		</script>
+
+		<script src="js/show-on-scroll.js"></script>
+	</body>
+	
+</html>
