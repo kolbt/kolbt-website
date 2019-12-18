@@ -5,6 +5,14 @@ body {
 	background-color: #EEF1EF;
 }
 
+:root {
+	--main-heading-font-size: 34px;
+	--main-large-font-size: 22px; 
+	--main-small-font-size: 18px; 
+	--main-border-size: 2px;
+	--main-border-extent: 80%;
+}
+
 /* Colors
 	Dark blue: 			#1E243B
 	Light (greenish): 	#7D98A1
@@ -26,7 +34,7 @@ body {
 }
 
 h1 {
-	font-size: 40px;
+	font-size: var(--main-heading-font-size);
 }
 
 h2 {
@@ -51,7 +59,7 @@ h2 {
 	text-align: center;
 	padding: 5px 5px;
 	text-decoration: none;
-	font-size: 20px;
+	font-size: var(--main-small-font-size);
 }
 
 #navbar a:hover {
@@ -72,7 +80,7 @@ h2 {
   	top: 150px;
   	left: 10vw;
   	width: 80vw;
-  	font-size: 3vw;
+  	font-size: var(--main-large-font-size);
   	padding-top: 5vw;
   	opacity: 0;
   	-webkit-transition: opacity 1.0s linear,
@@ -88,9 +96,9 @@ h2 {
 	opacity: 1;
 	-webkit-transform: translate(0, -150px);
 }
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 800px) {
   .sOne {
-     font-size: 24px;
+     font-size: var(--main-small-font-size);
   }
 }
 
@@ -130,6 +138,7 @@ h2 {
 /* Graduate work */
 .sTwo {
 	position: relative;
+	align-items: center;
 	opacity: 0;
 	margin-top: 5vw;
 	background-color: #A9B4C2;
@@ -154,11 +163,11 @@ h2 {
 }
 
 h4 {
-    width: 80%; 
-    border: 4px solid #1E243B; 
+    width: var(--main-border-extent); 
+    border: var(--main-border-size) solid #1E243B; 
     text-align: center;
     line-height: 0px;
-    font-size: 40px;
+    font-size: var(--main-heading-font-size);
     color: #1E243B;
 } 
 
@@ -169,25 +178,47 @@ h4 span {
 
 .grad-text {
 	opacity: 0;
-	width: 90vw;
-	display: block;
+	width: 80vw;
+	display: flex;
+	align-items: center;
   	margin-left: auto;
   	margin-right: auto;
-	font-size: 3vw;
-	text-align: center;
+	font-size: var(--main-large-font-size);
+	text-align: left;
 	-webkit-transition: opacity 1.0s linear;
   	transition: opacity 1.0s linear;
   	transition-delay: 1s;
 
 	will-change: opacity;
 }
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 800px) {
   .grad-text {
-     font-size: 24px;
+     font-size: var(--main-small-font-size);
+     display: flex;
+     align-items: center;
   }
 }
 .grad-text.is-visible {
 	opacity: 1;
+}
+.centered {
+	text-align: center;
+}
+.softmatter {
+	opacity: 0;
+	width: 18vw;
+	vertical-align: middle;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5)); 
+    -webkit-transition: opacity 0s linear;
+  	transition: opacity 0s linear;
+  	will-change: opacity;
+}
+.softmatter.is-visible {
+	opacity: 1;
+}
+figcaption {
+	font-size: 16px;
+	text-align: justify;
 }
 
 /* Whingdingdilly */
@@ -213,11 +244,11 @@ h4 span {
 }
 
 h5 {
-    width: 80%; 
-    border: 4px solid #5E6572; 
+    width: var(--main-border-extent); 
+    border: var(--main-border-size) solid #5E6572; 
     text-align: center;
     line-height: 0px;
-    font-size: 40px;
+    font-size: var(--main-heading-font-size);
     color: #5E6572;
 } 
 
@@ -228,11 +259,11 @@ h5 span {
 
 .whing-text {
 	opacity: 0;
-	width: 90vw;
+	width: 80vw;
 	display: block;
   	margin-left: auto;
   	margin-right: auto;
-	font-size: 3vw;
+	font-size: var(--main-large-font-size);
 	text-align: center;
 	-webkit-transition: opacity 1.0s linear;
   	transition: opacity 1.0s linear;
@@ -240,9 +271,9 @@ h5 span {
 
 	will-change: opacity;
 }
-@media screen and (min-width: 800px) {
+@media screen and (max-width: 800px) {
   .whing-text {
-     font-size: 24px;
+     font-size: var(--main-small-font-size);
   }
 }
 .whing-text.is-visible {
@@ -260,7 +291,7 @@ h5 span {
 }
 
 .animal-caption {
-	font-size: 3vw;
+	font-size: var(--main-large-font-size);
 	font-weight: bolder;
 	opacity: 0;
 	height: 100px;
@@ -272,11 +303,15 @@ h5 span {
   				-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
   	transition: opacity 0.5s linear,
   				transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition-delay: 3s;
+  	transition-delay: 2.5s;
 
   	will-change: transform, opacity;
 }
-
+@media screen and (max-width: 800px) {
+  .animal-caption {
+     font-size: 3vw;
+  }
+}
 .animal-caption.is-visible {
 	opacity: 1;
 	-webkit-transform: translate(0, -100px);
@@ -285,7 +320,7 @@ h5 span {
 
 .camel {
 	opacity: 0;
-	height: 100px;
+	height: 9vw;
 	position: relative;
 	top: 100px;
 	-webkit-transition: opacity 1.0s linear,
@@ -413,18 +448,18 @@ h5 span {
 }
 
 h6 {
-    width: 80%; 
-    border: 4px solid #1E243B; 
+    width: var(--main-border-extent); 
+    border: var(--main-border-size) solid #1E243B; 
     text-align: center;
     line-height: 0px;
-    font-size: 40px;
+    font-size: var(--main-heading-font-size);
     background: #7D98A1; 
     color: #1E243B;
 } 
 
 h6 span { 
     background: #7D98A1; 
-    padding: 20px;
+    padding: 2vw;
 }
 
 /* Bruce image overlay section */
@@ -456,6 +491,7 @@ h6 span {
 .icons {
 	overflow: hidden;
 	background-color: #7D98A1;
+	padding-top: 0.1px;
 }
 .icons a {
 	float: right;

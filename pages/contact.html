@@ -8,48 +8,46 @@
 
 	<body class="body">
 
-		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="../index.html">About<a/>
-					</li>
-					<li>
-						<a href="contact.html">Contact<a/>
-					</li>
-					<li>
-						<a href="resume.html">Resume</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
-
-
-		<div class="wrapper">
-
-			<div class="left">
-				<img class="profile-picture" src="../img/kolb_thomas.jpg" width="200" />
-				<h1 class="name">Thomas Kolb</h1>
-				<h4 class="subtitle">PhD Student, Klotsa Group</h4>
-			</div>
-			
-		
-			<div class="right">
-				<p class="bio">
-					Fifth year physical chemistry PhD student working on problems in non-equilibrium statistical mechanics.
-				</p>
-
-				<ul class="links">
-					<li>
-						<a href="https://github.com/kolbt">Github</a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/in/thomas-kolb-5174b2128/">LinkedIn</a>
-					</li>
-				</ul>
-			</div>
-
+		<div id="navbar">
+	  		<a href="../index.html">ABOUT<a/>
+			<a class="active" href="pages/contact.html">CONTACT<a/>
+			<a href="pages/resume.html">RESUME</a>
 		</div>
+
+		<div class="form-container">
+			<form action="contact_page.php">
+				
+				<label for="fname">First Name</label>
+				<input type="text" id="fname" name="firstname" placeholder="Your first name...">
+
+				<label for="lname">Last Name</label>
+				<input type="text" id="lname" name="lastname" placeholder="Your last name...">
+
+				<label for="email">E-mail</label>
+				<input type="text" id="email" name="email" placeholder="Your e-mail...">
+
+				<label for="message">Message</label>
+				<textarea id="message" name="subject" placeholder="Write something..."></textarea>
+
+				<input type="submit" value="Submit">
+
+			</form>
+		</div>
+
+		<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+
+			function myFunction() {
+	  			if (window.pageYOffset >= sticky) {
+	    			navbar.classList.add("sticky")
+	  			} else {
+	    			navbar.classList.remove("sticky");
+	  			}
+			}
+		</script>
+
 	</body>
 	
 </html>
