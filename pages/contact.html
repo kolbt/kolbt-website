@@ -3,7 +3,7 @@
 	<head>
 		<title>Thomas Kolb</title>
 		<link rel="stylesheet" type="text/css" href="../style.css">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 	</head>
 
 	<body class="body">
@@ -15,19 +15,26 @@
 		</div>
 
 		<div class="form-container">
-			<form action="contact_page.php">
+			<form action="../contact_page.php" method="POST">
 				
 				<label for="fname">First Name</label>
-				<input type="text" id="fname" name="firstname" placeholder="Your first name...">
-
+				<br>
+				<input type="text" id="fname" name="firstname" placeholder="Your first name..." style="width:300px">
+				<br>
 				<label for="lname">Last Name</label>
-				<input type="text" id="lname" name="lastname" placeholder="Your last name...">
+				<br>
+				<input type="text" id="lname" name="lastname" placeholder="Your last name..." style="width:300px">
+				<br>
 
 				<label for="email">E-mail</label>
 				<input type="text" id="email" name="email" placeholder="Your e-mail...">
 
 				<label for="message">Message</label>
-				<textarea id="message" name="subject" placeholder="Write something..."></textarea>
+				<textarea id="message" name="subject" placeholder="Write something..." style="height:200px"></textarea>
+
+				<label for="spam">You're not a robot, are you?</label>
+				<br>
+				<input type="text" id="spam" name="human" placeholder="2+2=" style="width:300px">
 
 				<input type="submit" value="Submit">
 

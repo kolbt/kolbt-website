@@ -516,6 +516,45 @@ h6 span {
 	width: 28px;
 }
 
+/* Contact page stuff */
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+	margin-top: 5px;
+	margin-bottom: 10px;
+	resize: vertical;
+	font-size: var(--main-small-font-size);
+	color: #A9B4C2;
+}
+
+input[type=submit] {
+	background-color: #7D98A1;
+	color: white;
+	padding: 12px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: var(--main-small-font-size)
+}
+
+input[type=submit]:hover {
+	background-color: #1E243B;
+}
+
+.form-container {
+	margin-top: 50px;
+	margin-bottom: 100px;
+	margin-left: 100px;
+	border-radius: 5px;
+	background-color: #EEF1EF;
+	padding: 20px;
+	font-size: var(--main-small-font-size);
+	width: 70%;
+}
+
 /* Animation for background color change */
 @keyframes bkgrnd {
 	0%   {background-color: #7D98A1;}
