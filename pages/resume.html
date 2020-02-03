@@ -3,53 +3,39 @@
 	<head>
 		<title>Thomas Kolb</title>
 		<link rel="stylesheet" type="text/css" href="../style.css">
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 	</head>
 
 	<body class="body">
 
-		<header>
-			<nav>
-				<ul>
-					<li>
-						<a href="../index.html">About<a/>
-					</li>
-					<li>
-						<a href="contact.html">Contact<a/>
-					</li>
-					<li>
-						<a href="resume.html">Resume</a>
-					</li>
-				</ul>
-			</nav>
-		</header>
+		<div id="navbar">
+	  		<a href="../index.html">ABOUT<a/>
+			<a href="contact.html">CONTACT<a/>
+			<a class="active" href="pages/resume.html">RESUME</a>
+		</div>
 
+		<div class="resume">
 
-		<div class="wrapper">
-
-			<div class="left">
-				<img class="profile-picture" src="../img/kolb_thomas.jpg" width="200" />
-				<h1 class="name">Thomas Kolb</h1>
-				<h4 class="subtitle">PhD Student, Klotsa Group</h4>
-			</div>
-			
-		
-			<div class="right">
-				<p class="bio">
-					Fifth year physical chemistry PhD student working on problems in non-equilibrium statistical mechanics.
-				</p>
-
-				<ul class="links">
-					<li>
-						<a href="https://github.com/kolbt">Github</a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/in/thomas-kolb-5174b2128/">LinkedIn</a>
-					</li>
-				</ul>
-			</div>
+			<object data="../img/resume.pdf" type="application/pdf" width="100%" height="1000vh">
+					<p>Alternative text - include a link <a href="../img/myfile.pdf">to the PDF!</a></p>
+			</object>
 
 		</div>
+
+		<script>
+			window.onscroll = function() {myFunction()};
+			var navbar = document.getElementById("navbar");
+			var sticky = navbar.offsetTop;
+
+			function myFunction() {
+	  			if (window.pageYOffset >= sticky) {
+	    			navbar.classList.add("sticky")
+	  			} else {
+	    			navbar.classList.remove("sticky");
+	  			}
+			}
+		</script>
+
 	</body>
 	
 </html>
