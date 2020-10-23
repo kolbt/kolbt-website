@@ -5,13 +5,13 @@ body {
 	background-color: #EEF1EF;
 }
 
-:root {
+/*:root {
 	--main-heading-font-size: 34px;
 	--main-large-font-size: 22px; 
 	--main-small-font-size: 18px; 
 	--main-border-size: 2px;
 	--main-border-extent: 80%;
-}
+}*/
 
 /* Colors
 	Dark blue: 			#1E243B
@@ -21,37 +21,78 @@ body {
 	White: 				#EEF1EF
 */
 
-/* Container, text, and animations for top box */
-.hello {
+/* Colors (rgb)
+	Dark blue: 			rgb(30,36,59)
+	Light (greenish): 	rgb(125,152,161)
+	Dark grey: 			rgb(94,101,114)
+	Light grey: 		rgb(169,180,194)
+	White: 				rgb(238,241,239)
+*/
+
+/******************************************************/
+
+/* Overarching container class */
+.container {
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+	align-items: center;
+	align-content: space-around;
+	width: 100vw;
+}
+/* Sub container for horizontally placed divs */
+.subbox {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	align-content: space-around;
+	width: 90vw;
+}
+/* Set heading sizes */
+.heading {
+	/* This smoothly changes from 48px to 36px */
+	font-size: max(36px, min(4vw, 48px));
+}
+.mid {
+	font-size: max(28px, min(3vw, 36px));
+}
+/* Set general text size */
+.text {
+	/* This smoothly changes from 28px to 20px */
+	font-size: max(20px, min(2.3vw, 28px));
+	/*text-align: justify;*/
+}
+
+/******************************************************/
+
+/* The main page animation header */
+.hello-container {
 	background-color: #1E243B;
-	padding: 40vh;
-	text-align: center;
-	height: 30vh;
-	animation-name: bkgrnd;
-	animation-duration: 1.5s;
-	animation-delay: 1s;
-	animation-fill-mode: both;
-}
-
-h1 {
-	font-size: var(--main-heading-font-size);
-}
-
-h2 {
 	color: #EEF1EF;
-	animation-name: subheading;
-	animation-duration: 3s;
-	animation-delay: 1s;
-	animation-fill-mode: both;
+  	height: 100vh;
+}
+.tom {
+	font-size: max(24px, min(3vw, 36px));
+	color: #7D98A1;
+	margin-bottom: 10px;
+}
+.tag {
+	font-size: max(18px, min(2.5vw, 30px));
+	color: #EEF1EF;
 }
 
-/* Make a navigation bar */
+/******************************************************/
+
+/* This sets up my navigation bar*/
 #navbar {
 	overflow: hidden;
 	background-color: #7D98A1;
 	z-index: 500;
 }
-
 #navbar a {
 	float: left;
 	display: block;
@@ -59,433 +100,221 @@ h2 {
 	text-align: center;
 	padding: 5px 5px;
 	text-decoration: none;
-	font-size: var(--main-small-font-size);
+	font-size: 20px;
 }
-
 #navbar a:hover {
 	background-color: #A9B4C2;
 	color: #1E243B;
 }
-
 #navbar a.active {
 	background-color: #5E6572;
 	color: #A9B4C2;
 }
-
-/* First brief bio text */ 
-.sOne {
-	display: flex;
-	align-items: center;
-  	position: relative;
-  	top: 150px;
-  	left: 10vw;
-  	width: 80vw;
-  	font-size: var(--main-large-font-size);
-  	padding-top: 5vw;
-  	opacity: 0;
-  	-webkit-transition: opacity 1.0s linear,
-  						-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-
-  	will-change: transform, opacity;
-}
-.sOne.is-visible {
-	opacity: 1;
-	-webkit-transform: translate(0, -150px);
-}
-@media screen and (max-width: 800px) {
-  .sOne {
-     font-size: var(--main-small-font-size);
-  }
-}
-
-.left {
-	padding-right: 50px;
-}
-.right {
-	color: #1E243B;
-}
-
-/* Formatting, animation for my headshot */
-.headshot {
-	opacity: 0;
-	width: 20vw;
-	border-radius: 50%;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5)); 
-    -webkit-transition: opacity 0s linear;
-  	transition: opacity 0s linear;
-
-  	will-change: opacity;
-}
-.headshot.is-visible {
-	opacity: 1;
-}
-
-/* Make the navigation bar stick when scrolled past */
 .sticky {
 	position: fixed;
 	top: 0;
 	width: 100%;
 }
 
-.sticky + .sOne {
-  	padding-top: 60px;
+/******************************************************/
+
+/* Headshot and brief bio */
+.me-container {
+	background-color: #EEF1EF;
+	color: #1E243B;
+}
+.me-left {
+	display: flex;
+	justify-content: center;
+	margin: min(20px, 1.5vw);
+	flex: 1 1 200px ;
+}
+.me-right {
+	margin: min(20px, 1.5vw);
+	flex: 3 1 300px;
+}
+.headshot {
+	/*width: max(250px, min(4vw, 48px));*/
+	max-width: 250px;
+	border-radius: 50%;
+	filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
 }
 
-/* Graduate work */
-.sTwo {
-	position: relative;
-	align-items: center;
-	opacity: 0;
-	margin-top: 5vw;
+/******************************************************/
+
+/* Graduate work w/ back cover */
+.grad-container {
 	background-color: #A9B4C2;
 	color: #1E243B;
-	left: 100vw;
-	-webkit-transition: opacity 1.0s linear,
-  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-
-  	will-change: transform, opacity;
 }
-.sTwo.is-visible {
-	opacity: 1;
-	-webkit-transform: translate(-100vw, 0);
+.container .q {
+	width: 75vw;
+	align-self: flex-start;
+	text-align: justify-all;
+	margin: 0px;
 }
-
-.shift {
-	padding-left: 15vw;
+.container .a {
+	width: 75vw;
+	max-width: 700px;
+	align-self: flex-end;
+	text-align: justify-all;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
-h4 {
-    width: var(--main-border-extent); 
-    border: var(--main-border-size) solid #1E243B; 
-    text-align: center;
-    line-height: 0px;
-    font-size: var(--main-heading-font-size);
-    color: #1E243B;
-} 
-
-h4 span { 
-    background: #A9B4C2; 
-    padding: 20px;
+/* This is how you make slides */
+.slide-container {
+	position: relative;
 }
-
-.grad-text {
-	opacity: 0;
-	width: 80vw;
-	display: flex;
-	align-items: center;
-  	margin-left: auto;
-  	margin-right: auto;
-	font-size: var(--main-large-font-size);
-	text-align: left;
-	-webkit-transition: opacity 1.0s linear;
-  	transition: opacity 1.0s linear;
-  	transition-delay: 1s;
-
-	will-change: opacity;
+.slide-box {
+	position: relative;
+	display: inline-block;
+	background-color: white;
+	width: 10vw;
 }
-@media screen and (max-width: 800px) {
-  .grad-text {
-     font-size: var(--main-small-font-size);
-     display: flex;
-     align-items: center;
-  }
-}
-.grad-text.is-visible {
-	opacity: 1;
-}
-.centered {
+.slide {
+	max-height: 80vh;
+	max-width: 90vw;
+	width: auto;
+	height: auto;
+	display: none;
 	text-align: center;
 }
-.softmatter {
-	opacity: 0;
-	width: 18vw;
-	vertical-align: middle;
-    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5)); 
-    -webkit-transition: opacity 0s linear;
-  	transition: opacity 0s linear;
-  	will-change: opacity;
+
+/* This sets the slide text settings */
+.slide-text {
+	position: absolute;
+	bottom: 3px;
+	width: 100%;
+	height: 100%;
+	height: auto;
+	text-align: center;
+	font-size: max(20px, min(4vw, 48px));
+	background-color: rgba(238,241,239,0.7);
+	display: none;
+	flex-direction: column;
+	align-content: stretch;
+	box-sizing: border-box;
 }
-.softmatter.is-visible {
-	opacity: 1;
+/* Move the text below the dot selector*/
+/*.slide-text {
+	position: absolute;
+	top: 110%;
+	width: 100%;
+	height: 100%;
+	height: auto;
+	text-align: center;
+	font-size: max(20px, min(4vw, 48px));
+	background-color: rgba(238,241,239,0.7);
+	display: none;
+	flex-direction: column;
+	align-content: stretch;
+	box-sizing: border-box;
+}*/
+
+
+
+.slide-head {
+	margin-top: -2px;
 }
-figcaption {
-	font-size: 16px;
-	text-align: justify;
+.slide-body {
+	margin-top: -20px;
+	margin-bottom: 5px;
 }
 
-/* Whingdingdilly */
-.sThree {
-	opacity: 0;
-	margin-top: 0vw;
+.slide-caption {
+	font-size: max(12px, min(2vw, 24px));
+	display: none;
+	margin-top: min(30px, 4%);
+	margin-left: 5%;
+	margin-right: 5%;
+	width: min(90vw, 110vh);
+	/*min-height: 10vh;*/
+	font-style: italic;
+}
+/* Set arrows to change slides */
+.l-arrow {
+	text-align: center;
+	position: absolute;
+	left: -5%;
+	top: 45%;
+	font-size: max(20px, min(4vw, 48px));
+	cursor: pointer;
+}
+.r-arrow {
+	text-align: center;
+	position: absolute;
+	right: -5%;
+	top: 45%;
+	font-size: max(20px, min(4vw, 48px));
+	cursor: pointer;
+}
+.l-arrow:hover, .r-arrow:hover {
+	opacity: 0.5;
+}
+/* Set dots to give current slide and change slides */
+.circs {
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	background: #1E243B;
+	border-top: solid;
+}
+.circ {
+	height: max(10px, min(3vw, 36px));
+  	width: max(10px, min(3vw, 36px));
+  	border-radius: 50%;
+  	display: inline-block;
+  	border-style: solid;
+  	border-width: max(3px, min(0.417vw, 5px));
+  	/*border-color: #1E243B;*/
+  	border-color: #A9B4C2;
+}
+.circ:hover {
+	/*background-color: rgb(30,36,59,0.5);*/
+	background-color: rgb(169,180,194,0.5);
+}
+.fill {
+	/*background-color: rgb(30,36,59,1)*/
+	background-color: rgb(169,180,194,1);
+}
+
+/******************************************************/
+
+/* Whingdingdilly explanation */
+.whing-container {
 	background-color: #EEF1EF;
 	color: #5E6572;
-	position: relative;
-	left: -100vw;
-	-webkit-transition: opacity 1.0s linear,
-  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-
-  	will-change: transform, opacity;
 }
-.sThree.is-visible {
-	opacity: 1;
-	-webkit-transform: translate(100vw, 0);
-}
-
-h5 {
-    width: var(--main-border-extent); 
-    border: var(--main-border-size) solid #5E6572; 
-    text-align: center;
-    line-height: 0px;
-    font-size: var(--main-heading-font-size);
-    color: #5E6572;
-} 
-
-h5 span { 
-    background: #EEF1EF; 
-    padding: 20px;
-}
-
-.whing-text {
-	opacity: 0;
-	width: 80vw;
-	display: block;
-  	margin-left: auto;
-  	margin-right: auto;
-	font-size: var(--main-large-font-size);
-	text-align: center;
-	-webkit-transition: opacity 1.0s linear;
-  	transition: opacity 1.0s linear;
-  	transition-delay: 1s;
-
-	will-change: opacity;
-}
-@media screen and (max-width: 800px) {
-  .whing-text {
-     font-size: var(--main-small-font-size);
-  }
-}
-.whing-text.is-visible {
-	opacity: 1;
-}
-
 .animals {
-	margin-top: 3vw;
-	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	grid-template-rows: auto auto;
-	grid-column-gap: 10px;
-	align-items: baseline;
-	justify-items: center;
+	justify-content: space-around;
+	align-items: flex-end;
 }
-
-.animal-caption {
-	font-size: var(--main-large-font-size);
-	font-weight: bolder;
-	opacity: 0;
-	height: 100px;
-	position: relative;
-	top: 100px;
-	-webkit-transition: opacity 0.5s linear,
-  						-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 0.5s linear,
-  				-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 0.5s linear,
-  				transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition-delay: 2.5s;
-
-  	will-change: transform, opacity;
-}
-@media screen and (max-width: 800px) {
-  .animal-caption {
-     font-size: 3vw;
-  }
-}
-.animal-caption.is-visible {
-	opacity: 1;
-	-webkit-transform: translate(0, -100px);
-	transform: translate(0, -100px);
-}
-
 .camel {
-	opacity: 0;
 	height: 9vw;
-	position: relative;
-	top: 100px;
-	-webkit-transition: opacity 1.0s linear,
-  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-
-  	will-change: transform, opacity;
-}
-.camel.is-visible {
-	opacity: 1;
-	-webkit-transform: translate(0, -100px);
-	transform: translate(0, -100px);
 }
 .rhino {
-	opacity: 0;
 	height: 8vw;
-	position: relative;
-	top: 100px;
-	-webkit-transition: opacity 1.0s linear,
-  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition-delay: 0.5s;
-
-  	will-change: transform, opacity;
-}
-.rhino.is-visible{
-	opacity: 1;
-	-webkit-transform: translate(0, -100px);
-	transform: translate(0, -100px);
 }
 .giraffe {
-	opacity: 0;
 	height: 16vw;
-	position: relative;
-	top: 100px;
-	-webkit-transition: opacity 1.0s linear,
-  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition-delay: 1s;
-
-  	will-change: transform, opacity;
-}
-.giraffe.is-visible{
-	opacity: 1;
-	-webkit-transform: translate(0, -100px);
-	transform: translate(0, -100px);
 }
 .elephant {
-	opacity: 0;
 	height: 10vw;
-	position: relative;
-	top: 100px;
-	-webkit-transition: opacity 1.0s linear,
-  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition-delay: 1.5s;
-
-  	will-change: transform, opacity;
-}
-.elephant.is-visible{
-	opacity: 1;
-	-webkit-transform: translate(0, -100px);
-	transform: translate(0, -100px);
 }
 .deer {
-	opacity: 0;
 	height: 10vw;
-	position: relative;
-	top: 100px;
-	-webkit-transition: opacity 1.0s linear,
-  						-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				-webkit-transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				transform 1.0s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition-delay: 2s;
-
-  	will-change: transform, opacity;
-}
-.deer.is-visible{
-	opacity: 1;
-	-webkit-transform: translate(0, -100px);
-	transform: translate(0, -100px);
 }
 
-/* Outside of work */
-.sFour {
-	opacity: 0;
-	margin-top: 0vw;
-	position: relative;
-	top: 150px;
+/******************************************************/
+
+/* A little flavor of who I am */
+.life-container {
 	background-color: #7D98A1;
 	color: #1E243B;
-	-webkit-transition: opacity 1.0s linear,
-  						-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				-webkit-transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-  	transition: opacity 1.0s linear,
-  				transform 0.5s cubic-bezier(0.58, 0.0, 0.5, 2.0);
-
-  	will-change: transform, opacity;
 }
 
-.sFour.is-visible {
-	opacity: 1;
-	-webkit-transform: translate(0, -150px);
-	transform: translate(0, -150px);
-}
-
-.colorFour {
-	background: #7D98A1; 
-	padding-top: 0.1px;
-}
-
-h6 {
-    width: var(--main-border-extent); 
-    border: var(--main-border-size) solid #1E243B; 
-    text-align: center;
-    line-height: 0px;
-    font-size: var(--main-heading-font-size);
-    background: #7D98A1; 
-    color: #1E243B;
-} 
-
-h6 span { 
-    background: #7D98A1; 
-    padding: 2vw;
-}
-
-/* Bruce image overlay section */
-.bruce {
-	position: relative;
-}
-.brucePic {
-	opacity: 0;
-	width: 100vw;
-	-webkit-transition: opacity 4s;
-  	transition: opacity 4s;
-
-  	will-change: opacity;
-}
-.brucePic.is-visible {
-	opacity: 1;
-}
-.bruceTxt {
-	position: absolute;
-	bottom: 20px;
-	right: 20px;
-	background-color: #1E243B;
-	color: #EEF1EF;
-	padding-left: 20px;
-	padding-right: 20px;
-}
+/******************************************************/
 
 /* Social contact icons and links */
 .icons {
@@ -516,53 +345,5 @@ h6 span {
 	width: 28px;
 }
 
-/* Contact page stuff */
-input[type=text], select, textarea {
-	width: 100%;
-	padding: 12px;
-	border: 1px solid #ccc;
-	border-radius: 4px;
-	box-sizing: border-box;
-	margin-top: 5px;
-	margin-bottom: 10px;
-	resize: vertical;
-	font-size: var(--main-small-font-size);
-	color: #A9B4C2;
-}
 
-input[type=submit] {
-	background-color: #7D98A1;
-	color: white;
-	padding: 12px 20px;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	font-size: var(--main-small-font-size)
-}
 
-input[type=submit]:hover {
-	background-color: #1E243B;
-}
-
-.form-container {
-	margin-top: 50px;
-	margin-bottom: 100px;
-	margin-left: 100px;
-	border-radius: 5px;
-	background-color: #EEF1EF;
-	padding: 20px;
-	font-size: var(--main-small-font-size);
-	width: 70%;
-}
-
-/* Animation for background color change */
-@keyframes bkgrnd {
-	0%   {background-color: #7D98A1;}
-	100% {background-color: #1E243B;}
-}
-/* Animation for text color change */
-@keyframes subheading {
-	0%	 {color: #7D98A1;}
-	50%	 {color: #1E243B;}
-	100% {color: #EEF1EF;}
-}

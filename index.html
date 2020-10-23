@@ -5,127 +5,176 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 		<script type="text/javascript" src="js/jQuery-3.4.1.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="google-site-verification" content="GLeVx-E3m85uwehNPGoK4VMJItJklNy9Qt7lgO4QoPU" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="HandheldFriendly" content="true">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-164166370-2"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-164166370-2');
+		</script>
 	</head>
 
 	<body>
-
-		<div class="hello">
-			<h1>Hi, I'm Tom.</h1>
-			<h2>How can we work together?</h2>
+		<!-- This is for the fancy hello header -->
+		<div class="container hello-container">
+			<div class="tom">
+				Hi, I'm Tom.
+			</div>
+			<div class="tag">
+				How can we work together?
+			</div>
 		</div>
 
+		<!-- This is the **sticky** navigation bar -->
 		<div id="navbar">
 	  		<a class="active" href="index.html">ABOUT<a/>
 			<a href="pages/contact.html">CONTACT<a/>
 			<a href="pages/resume.html">RESUME</a>
 		</div>
 
-		<div class="sOne show-on-scroll", id="sOne">
-			<div class="left">
-				<img class="headshot show-on-scroll" align="left" src="img/kolb_thomas.jpg">
+		<!-- This is a brief bio and headshot -->
+		<div class="container me-container">
+			<br>
+			<div class="subbox">
+				<div class="text me-left">
+					<img class="headshot" src="img/kolb_thomas.jpg">
+				</div>
+				<div class="text me-right">
+					<p class="mid">
+						<strong>This is me!</strong>
+					</p>
+					<p>
+						I'm a fifth year physical chemistry PhD student in the Klotsa Group at UNC Chapel Hill. I've used my time as a graduate student to determine and pursue what I'm passionate about - data science.
+					</p>
+				</div>
 			</div>
-
-			<div class="right">
-				<h3>This is me!</h3>
-  				<p>
-  					I'm a fifth year physical chemistry PhD student in the Klotsa Group at UNC Chapel Hill. I've used my time as a graduate student to determine and pursue what I'm passionate about — <strong>data science</strong>.
-  				</p>
-			</div>
+			<br>
 		</div>
 
+		<!-- This sums up my grad work -->
+		<div class="container grad-container">
+			<p class="heading">
+				Graduate Work
+			</p>
+			<p class="text q">
+				"So, what did you <strong>do</strong> in graduate school?"
+			</p>
+			<p class="text a">
+				I imagined, planned, started, and finished projects teaching myself the necessary skills to get the work done efficiently and accurately.
+			</p>
 
-		<div class="sTwo show-on-scroll", id="sTwo">
-			<br>
-			<div class="shift">
-				<h4>
-					<span>Graduate Work</span>
-				</h4>
+			<div class="slide-container">
+				<!-- Slide images -->
+				<img class="slide" src="img/back_cover.jpg" style="opacity: 1.0">
+				<div class="slide-text">
+					<p class="slide-head mid">
+						<strong>Data Visualization</strong>
+					</p>
+					<p class="slide-body text">
+						Scientific data is often complex. Visuals are the most efficient means of distilling meaning from data.
+					</p>
+				</div>
+
+			  	<img class="slide" src="img/work_resize.jpg" style="opacity: 1.0">
+			  	<div class="slide-text">
+					<p class="slide-head mid">
+						<strong>Project Management</strong>
+					</p>
+					<p class="slide-body text">
+						The most understated benefit of getting your doctorate. I've learned to develop clear goals and timelines, and adapt to maximize the value of a project as it grows.
+					</p>
+				</div>
+
+			  	<img class="slide" src="img/funding-logos.jpg" style="opacity: 1.0">
+			  	<div class="slide-text">
+					<p class="slide-head mid">
+						<strong>Communication</strong>
+					</p>
+					<p class="slide-body text">
+						Making your ideas and findings clear to others is paramount. I've developed clear and concise oral and written communication to convey how fundamental science applies to everyday life.
+					</p>
+				</div>
+
+			  	<img class="slide" src="img/collaboration.jpg" style="opacity: 1.0">
+			  	<div class="slide-text">
+					<p class="slide-head mid">
+						<strong>Collaboration</strong>
+					</p>
+					<p class="slide-body text">
+						Science is never done alone. I've worked with a variety of people with vastly different educational backgrounds to create effective and relaxed work environments.
+					</p>
+				</div>
+
+			  	<!-- Arrow buttons in overlapping flex -->
+			  	<div class="l-arrow" onclick="plusDivs(-1)">&#10094;</div>
+			  	<div class="r-arrow" onclick="plusDivs(1)">&#10095;</div>
+			  	<!-- Circle buttons in overlapping flex -->
+			  	<div class="circs">
+			  		<span class="circ" onclick="currentDiv(1)"></span>
+			  		<span>&nbsp;</span>
+			  		<span class="circ" onclick="currentDiv(2)"></span>
+			  		<span>&nbsp;</span>
+			  		<span class="circ" onclick="currentDiv(3)"></span>
+			  		<span>&nbsp;</span>
+			  		<span class="circ" onclick="currentDiv(4)"></span>
+			  	</div>
 			</div>
 
-			<div class="grad-text show-on-scroll">
-
-				<span>
-					So, what did I study in graduate school? The technical answer to that sounds something like the title of my dissertation: <strong>Mixtures of active Brownian particles: statistical mechanics and phase behavior</strong> (if you'd like to read more, take a gander at the first paper I published here). But here's the (highly non-technical) answer that I prefer:
-					<br>
-					<br>
-					<div class="centered">
-						<strong>I taught myself the necessary skills to start and finish projects.</strong>
-					</div>
-					<br>
-					What skills? Primarily Python (and a litany of its modules: scipy, pandas, numpy, matplotlib), and Bash (in my opinion, an absolute necessity in the world of data processing/analysis). But, I also learned a great deal in the realms of physics, math, statistics, chemistry and even some biology.
-				</span>
-
-				<figure>
-					<img class="softmatter show-on-scroll" align="right" src="img/soft_matter_art.png">
-					<figcaption>Data analysis can look cool too! This image was selected as the back cover to an issue of Soft Matter.</figcaption>
-				</figure>
-
-			</div>
-
-			<br>
-			<br>
-
+			<!-- Captions that circulate as well -->
+		  	<div class="slide-caption small-text">
+		  		<p>My visualization of spinodal decomposition in active matter was selected as the back cover to Soft Matter.</p>
+		  	</div>
+		  	<div class="slide-caption small-text">
+		  		<p style="color: #A9B4C2">None</p>
+		  	</div>
+		  	<div class="slide-caption small-text">
+		  		<p>I wrote and was awarded nationally competitive grants which funded my graduate work.</p>
+		  	</div>
+		  	<div class="slide-caption small-text">
+		  		<p style="color: #A9B4C2">None</p>
+	  		</div>
 		</div>
 
-		<div class="sThree show-on-scroll", id="sThree">
-			<br>
-			<div class="shift">
-				<h5 class="whing" id="whing">
-					<span> Whingdingdilly </span>
-				</h5>
+		<!-- This explains whingdingdilly -->
+		<div class="container whing-container">
+			<p class="heading">
+				Whingdingdilly
+			</p>
+			<p class="text">
+				During grad school, I've had to write a lot of code to solve a variety of issues. To keep things copasetic between my laptop, workstation and the computing clusters, I made a github repository. But what to call it? The diversity of languages, and functions reminded me of Bill Peet's "The Whingdingdilly" (a personal childhood favorite).
+			</p>
+			<div class="subbox animals">
+				<div>
+					<img class="camel" src="img/camel.svg">
+				</div>
+				<div>
+					<img class="rhino" src="img/rhino.svg">
+				</div>
+				<div>
+					<img class="giraffe" src="img/giraffe.svg">
+				</div>
+				<div>
+					<img class="elephant" src="img/elephant.svg">
+				</div>
+				<div>
+					<img class="deer" src="img/deer.svg">
+				</div>
 			</div>
-
-			<div class="whing-text show-on-scroll">
-				During grad school, I've had to write a lot of code to solve a variety of issues. To keep things copasetic between my laptop, workstation  and the computing clusters, I made a github repository. But what to call it? The diversity of languages, and functions reminded me of Bill Peet's "The Whingdingdilly" (a personal childhood favorite).
-			</div>
-
 			<br>
-
-			<div class="animals">
-
-				<div>
-					<img class="camel show-on-scroll" src="img/camel.svg">
-				</div>
-				<div>
-					<img class="rhino show-on-scroll" src="img/rhino.svg">
-				</div>
-				<div>
-					<img class="giraffe show-on-scroll" src="img/giraffe.svg">
-				</div>
-				<div>
-					<img class="elephant show-on-scroll" src="img/elephant.svg">
-				</div>
-				<div>
-					<img class="deer show-on-scroll" src="img/deer.svg">
-				</div>
-
-				<div class="animal-caption show-on-scroll"> &nbsp; bash </div>
-				<div class="animal-caption show-on-scroll"> jupyter </div>
-				<div class="animal-caption show-on-scroll"> python </div>
-				<div class="animal-caption show-on-scroll"> &nbsp; git </div>
-				<div class="animal-caption show-on-scroll"> &nbsp; C++ </div>
-	
-			</div>
-
-			<br>
-
 		</div>
 
-		<div class="sFour show-on-scroll", id="sFour">
-			<div class="shift colorFour">
-				<h6>
-					<span>Outside of Work</span>
-				</h6>
-			</div>
-
-			<div class="bruce">
-				<img class="brucePic show-on-scroll" src="img/bruce_jumping.jpg">
-				<div class="bruceTxt">
-					<p> Bruce. Loves. Diving. </p>
-				</div>
-			</div>
+		<!-- This shows that I'm a real person -->
+		<div class="container life-container">
+			<p class="heading">
+				Outside of Work
+			</p>
+			<br>
 		</div>
 
 		<div class="icons">
@@ -141,21 +190,55 @@
 		</div>
 
 
-		<script>
-			window.onscroll = function() {myFunction()};
-			var navbar = document.getElementById("navbar");
-			var sticky = navbar.offsetTop;
+	<script>
+		var slideIndex = 1;
+		showDivs(slideIndex);
 
-			function myFunction() {
-	  			if (window.pageYOffset >= sticky) {
-	    			navbar.classList.add("sticky")
-	  			} else {
-	    			navbar.classList.remove("sticky");
-	  			}
-			}
-		</script>
+		function plusDivs(n) {
+		  showDivs(slideIndex += n);
+		}
 
-		<script src="js/show-on-scroll.js"></script>
+		function currentDiv(n) {
+		  showDivs(slideIndex = n);
+		}
+
+		function showDivs(n) {
+		  var i;
+		  var x = document.getElementsByClassName("slide");
+		  var y = document.getElementsByClassName("slide-text");
+		  var z = document.getElementsByClassName("slide-caption");
+		  var dots = document.getElementsByClassName("circ");
+		  if (n > x.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++) {
+		    x[i].style.display = "none";  
+		    y[i].style.display = "none"; 
+		    z[i].style.display = "none"; 
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		    dots[i].className = dots[i].className.replace(" fill", "");
+		  }
+		  x[slideIndex-1].style.display = "block"; 
+		  y[slideIndex-1].style.display = "flex";  
+		  z[slideIndex-1].style.display = "inline-flex"; 
+		  dots[slideIndex-1].className += " fill";
+		}
+	</script>
+
+	<script>
+		window.onscroll = function() {myFunction()};
+		var navbar = document.getElementById("navbar");
+		var sticky = navbar.offsetTop;
+
+		function myFunction() {
+  			if (window.pageYOffset >= sticky) {
+    			navbar.classList.add("sticky")
+  			} else {
+    			navbar.classList.remove("sticky");
+  			}
+		}
+	</script>
+
 	</body>
 	
 </html>
